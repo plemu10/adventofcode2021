@@ -13,7 +13,6 @@ end
 puts count                                                          #part 1 answer
 
 #Part 2
-
 count = 0                                                           #zero out counter
 window = []                                                         #create a new empty list to hold the summed values
 input.each_with_index do |row, index|
