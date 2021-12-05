@@ -27,16 +27,18 @@ draw.each do |num|                  #iterate for all of the drawn numbers
             end
         end
     end
-    cards.each do |card|            #Once all the cards have been processed, need to check for win condition
+    cards.each_with_index do |card, place|            #Once all the cards have been processed, need to check for win condition
         card.each do |row|
             if row[0] == "HIT" && row[1] == "HIT" && row[2] == "HIT" && row[3] == "HIT" && row[4] == "HIT"
                 win_calc(card, num)
+                cards.delete_at(place)
             end
         end
         card[0].each_with_index do |ele, index|
             if ele == "HIT"
                 if card[1][index] == "HIT" && card[2][index] == "HIT" && card[3][index] == "HIT" && card[4][index] == "HIT"
                     win_calc(card, num)
+                    cards.delete_at(place)
                 end
             end
         end
